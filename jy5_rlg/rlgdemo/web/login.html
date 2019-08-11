@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+<body>
+<!--<div id="dl_1">-->
+    <!--<img src="img/beijing/timg.png">-->
+<!--</div>-->
+<!--<div id="wk">-->
+    <!--<div id="continue">-->
+        <!--<form action="/manage/user/login.do" method="post" id="con-form">-->
+            <!--<input type="text" name="username" placeholder="输入账户" class="cf-cf">-->
+            <!--<input type="password" name="password" placeholder="输入密码" class="cf-cf">-->
+            <!--<input type="button" value="登录" id="btn">-->
+        <!--</form>-->
+    <!--</div>-->
+<!--</div>-->
+<!--</body>-->
+<!--<script src="js/jquery-3.3.1.js"></script>-->
+<div id="dl_1">
+<img src="img/beijing/timg.png">
+</div>
+<div id="wk">
+    <div id="continue">
+        <form action="/manage/user/login.do"  method="post" id="con-form">
+            <input type="text"  name="username"  placeholder="输入账户" id="inp" onblur="yz()">
+            <!--<div id="dd"></div>-->
+            <input type="password" name="password" placeholder="输入密码" id="inp2">
+            <input type="button" value="登录" onclick="login1()"  id="btn">
+        <div id="nrhz">
+
+        </div>
+        </form>
+    </div>
+</div>
+</body>
+<script src="js/jquery-3.3.1.js"></script>
+<!--<script>-->
+    <!--//模拟用户登录-->
+    <!--var uu = "ceshi";-->
+    <!--var pp = 123;-->
+    <!--//获取用户输入的参数-->
+    <!--var uname = document.getElementById("inp");-->
+    <!--var psd = document.getElementById("inp2");-->
+    <!--var dd = document.getElementById("dd");-->
+
+    <!--function login() {-->
+
+        <!--// alert(uname.value);-->
+        <!--if (uname.value === uu) {-->
+            <!--alert("登陆成功")-->
+        <!--} else {-->
+            <!--alert("登陆失败")-->
+        <!--}-->
+    <!--}-->
+
+    <!--function yz() {-->
+        <!--if (uname.value === uu) {-->
+            <!--dd.innerText = "用户名正确";-->
+            <!--dd.style.color = "green";-->
+        <!--}else {-->
+            <!--dd.innerText = "用户名错误";-->
+            <!--dd.style.color = "red";-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+<script>
+    $("#btn").click(function () {
+        var un = $("#inp").val();
+        var pd = $("#inp2").val();
+        $.post(
+            "/manage/user/login.do",
+            {username:un,password:pd},
+            function (dt) {
+                if (dt.status !== 0) {
+                    $("#nrhz").empty();
+                    $("#nrhz").append("<p>"+dt.mag+"</p>");
+                }else {
+                    window.open("home.html")
+                }
+            }
+        )
+    })
+</script>
+</html>

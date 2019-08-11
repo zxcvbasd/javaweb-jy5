@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    padding: 0;
+    /*background-color: #F2F2F2;*/
+    font-size: 14px;
+    color: black;
+}
+a{
+    text-decoration: none;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}

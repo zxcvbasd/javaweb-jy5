@@ -1,0 +1,52 @@
+#wk {
+    height: 200px;
+    width: 200px;
+    /*border: 1px red solid;*/
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 40%;
+    left: 44%;
+    position: absolute;
+    animation: eee 5s;
+    animation-fill-mode: forwards;
+}
+
+#con-form {
+    border: none;
+}
+
+#con-form input {
+    margin-top: 10px;
+    border-style: solid;
+    border-radius: 5px;
+}
+#inp,#inp2{
+    height: 25px;
+    border-radius: 5px;
+    border-width: 1px;
+    border-style: solid;
+    padding-left: 10px;
+    outline: none;
+}
+
+#dl_1{
+    height: 100%;
+    width: 100%;
+}
+#dl_1 img{
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes  eee{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+        bottom: 400px;
+        /*position: absolute;*/
+    }
+}
